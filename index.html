@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Coronavirus Update(Live)</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
+    />
+    <!-- Google Fonts Roboto -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <!-- Your custom styles (optional) -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <style>
+      body {
+        /* background-color: #c34271; */
+        background-color: #292421;
+        /* background-image: linear-gradient(to right, #cb356b, #bd3f32); */
+        font-family: "Sen", sans-serif;
+      }
+      #grad {
+        /* background-color: #f070a1; */
+        background-color: #797975;
+        /* background-image: linear-gradient(to right, #eb5757, #000000); */
+        border-radius: 15px;
+        margin-top: 10px;
+        color: whitesmoke;
+      }
+      .india-data {
+        background-image: linear-gradient(to right, #f953c6, #b91d73);
+        border-radius: 20px;
+      }
+      #header {
+        text-align: center;
+        color: whitesmoke;
+      }
+    </style>
+    <script type="text/javascript">
+      (function(f, a) {
+        if (!a.__SV) {
+          var b = window;
+          try {
+            var d,
+              m,
+              j,
+              k = b.location,
+              c = k.hash;
+            d = function(a, b) {
+              return (m = a.match(RegExp(b + "=([^&]*)"))) ? m[1] : null;
+            };
+            c &&
+              d(c, "state") &&
+              ((j = JSON.parse(decodeURIComponent(d(c, "state")))),
+              "mpeditor" === j.action &&
+                (b.sessionStorage.setItem("_mpcehash", c),
+                history.replaceState(
+                  j.desiredHash || "",
+                  f.title,
+                  k.pathname + k.search
+                )));
+          } catch (n) {}
+          var l, h;
+          window.freshpaint = a;
+          a._i = [];
+          a.init = function(b, d, g) {
+            function c(b, i) {
+              var a = i.split(".");
+              2 == a.length && ((b = b[a[0]]), (i = a[1]));
+              b[i] = function() {
+                b.push([i].concat(Array.prototype.slice.call(arguments, 0)));
+              };
+            }
+            var e = a;
+            "undefined" !== typeof g ? (e = a[g] = []) : (g = "freshpaint");
+            e.people = e.people || [];
+            e.toString = function(b) {
+              var a = "freshpaint";
+              "freshpaint" !== g && (a += "." + g);
+              b || (a += " (stub)");
+              return a;
+            };
+            e.people.toString = function() {
+              return e.toString(1) + ".people (stub)";
+            };
+            l = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(
+              " "
+            );
+            for (h = 0; h < l.length; h++) c(e, l[h]);
+            var f = "set set_once union unset remove delete".split(" ");
+            e.get_group = function() {
+              function a(c) {
+                b[c] = function() {
+                  call2_args = arguments;
+                  call2 = [c].concat(Array.prototype.slice.call(call2_args, 0));
+                  e.push([d, call2]);
+                };
+              }
+              for (
+                var b = {},
+                  d = ["get_group"].concat(
+                    Array.prototype.slice.call(arguments, 0)
+                  ),
+                  c = 0;
+                c < f.length;
+                c++
+              )
+                a(f[c]);
+              return b;
+            };
+            a._i.push([b, d, g]);
+          };
+          a.__SV = 1.3;
+          b = f.createElement("script");
+          b.type = "text/javascript";
+          b.async = !0;
+          b.src =
+            "undefined" !== typeof FRESHPAINT_CUSTOM_LIB_URL
+              ? FRESHPAINT_CUSTOM_LIB_URL
+              : "//perfalytics.com/static/js/freshpaint.js";
+          d = f.getElementsByTagName("script")[0];
+          d.parentNode.insertBefore(b, d);
+        }
+      })(document, window.freshpaint || []);
+      freshpaint.init("6be30e4a-fc34-4040-877c-0b59c8955e89");
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h2 id="header">Covid-19 Coronavirus Outbreak In India</h2>
+      <table id="grad" class="table table-borderless">
+        <thead>
+          <tr>
+            <th>Total Cases</th>
+            <th>Indians</th>
+            <th>Foreigners</th>
+            <th>Deaths</th>
+            <th>Cured</th>
+          </tr>
+        </thead>
+        <tbody id="india-data"></tbody>
+      </table>
+      <table id="grad" class="table table-borderless">
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>Cases</th>
+            <th>Deaths</th>
+            <th>Cured</th>
+          </tr>
+        </thead>
+        <tbody id="tableData"></tbody>
+      </table>
+      <script>
+        $(document).ready(function() {
+          $.getJSON(
+            "https://api.rootnet.in/covid19-in/stats/latest",
+            null,
+            function(data) {
+              Obj = data.data.summary;
+              mainObj = data.data.regional.sort(function(a, b) {
+                return (
+                  b.confirmedCasesIndian +
+                  b.confirmedCasesForeign -
+                  (a.confirmedCasesIndian + a.confirmedCasesForeign)
+                );
+              });
+              var k = "<tbody>";
+              for (i = 0; i < mainObj.length; i++) {
+                k += "<tr>";
+                k += "<td>" + mainObj[i].loc + "</td>";
+                k +=
+                  "<td>" +
+                  (mainObj[i].confirmedCasesIndian +
+                    mainObj[i].confirmedCasesForeign) +
+                  "</td>";
+                k += "<td>" + mainObj[i].deaths + "</td>";
+                k += "<td>" + mainObj[i].discharged + "</td>";
+                k += "</tr>";
+              }
+              k += "</tbody>";
+              document.getElementById("tableData").innerHTML = k;
+              var j = "<tbody>";
+              j += "<tr>";
+              j += "<td>" + Obj.total + "</td>";
+              j += "<td>" + Obj.confirmedCasesIndian + "</td>";
+              j += "<td>" + Obj.confirmedCasesForeign + "</td>";
+              j += "<td>" + Obj.deaths + "</td>";
+              j += "<td>" + Obj.discharged + "</td>";
+              j += "</tr>";
+              j += "</tbody>";
+              document.getElementById("india-data").innerHTML = j;
+              console.log(Obj);
+            }
+          );
+        });
+      </script>
+    </div>
+    <div class="container my-5"></div>
+    <section
+      class="px-md-5 mx-md-5 py-5 text-center white-text elegant-color z-depth-1 rounded"
+    >
+      <h3 class="">
+        Made with <i class="fas fa-heart red-text mx-1"></i> by
+        <a href="instagram.com/roshan.py">Rosh</a>
+      </h3>
+      <h6>
+        Data:
+        <a href="https://www.mohfw.gov.in/"> Ministry of Health and Welfare</a>
+      </h6>
+
+      <h6>
+        API:
+        <a href="https://github.com/amodm/api-covid19-in">Amod Malviya</a>
+      </h6>
+    </section>
+
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- Your custom scripts (optional) -->
+    <script type="text/javascript"></script>
+  </body>
+</html>
