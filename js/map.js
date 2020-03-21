@@ -20,11 +20,14 @@ var width = window.innerWidth * (isMobile ? 0.8 : 0.5),
     .attr("class", "tooltip")
     .style("opacity", 0);
 function drawMap(t) {
-  d3.json("https://indiainpixels.xyz/corona/finsl.json", function(e, a) {
-    centerZoom(a);
-    var n = drawSubUnits(a);
-    colorSubunits(n, t);
-  });
+  d3.json(
+    "https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/map.json",
+    function(e, a) {
+      centerZoom(a);
+      var s = drawSubUnits(a);
+      colorSubunits(s, t);
+    }
+  );
 }
 const populateGlobal = async () => {
   const t = await fetch("https://corona.lmao.ninja/all"),
@@ -48,16 +51,16 @@ function populate(t) {
   const e = apiResp.data.slice().reverse()[t],
     {
       total: a,
-      discharged: n,
-      deaths: s,
+      discharged: s,
+      deaths: n,
       confirmedCasesForeign: o,
       confirmedCasesIndian: i
     } = e.summary;
   $("#total_cases").html(a),
     $("#indian_cases").html(i),
     $("#foreign_cases").html(o),
-    $("#death_cases").html(s),
-    $("#cure_cases").html(n);
+    $("#death_cases").html(n),
+    $("#cure_cases").html(s);
   let r =
     '<h2 style="color:white;">Indian States Stats</h2><table class="myTable">\n                      <thead>\n                     <tr>\n                      <th>State</td>\n                      <th>Cases</td>\n                      <th>Deaths</td>\n                      <th>Cured</td>\n                      </tr>\n                      </thead>\n                      <tbody>\n                      ';
   (casesByState = {}),
@@ -65,13 +68,13 @@ function populate(t) {
       const {
         confirmedCasesForeign: e,
         confirmedCasesIndian: a,
-        discharged: n,
-        deaths: s,
+        discharged: s,
+        deaths: n,
         loc: o
       } = t;
-      (casesByState[o] = [a, e, s, n]),
+      (casesByState[o] = [a, e, n, s]),
         (r += `<tr><td>${o.replace("Union Territory of ", "")}</td><td>${a +
-          e}</td><td>${s}</td><td>${n}</td></tr>`);
+          e}</td><td>${n}</td><td>${s}</td></tr>`);
     }),
     (r += "</tbody></table>"),
     $("#table").html(r),
@@ -80,18 +83,21 @@ function populate(t) {
     .scaleLinear()
     .domain([-2, parseInt(27), 45])
     .range(["#ddd", "#0794DB", "#050D7F"]);
-  d3.json("https://indiainpixels.xyz/corona/finsl.json", function(t, e) {
-    g.selectAll(".subunit")
-      .data(topojson.feature(e, e.objects.polygons).features)
-      .transition()
-      .duration(700)
-      .style("fill", function(t, e) {
-        const a = t.properties.st_nm;
-        return a in casesByState
-          ? l(casesByState[a][0] + casesByState[a][1])
-          : "#ddd";
-      });
-  });
+  d3.json(
+    "https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/map.json",
+    function(t, e) {
+      g.selectAll(".subunit")
+        .data(topojson.feature(e, e.objects.polygons).features)
+        .transition()
+        .duration(700)
+        .style("fill", function(t, e) {
+          const a = t.properties.st_nm;
+          return a in casesByState
+            ? l(casesByState[a][0] + casesByState[a][1])
+            : "#ddd";
+        });
+    }
+  );
 }
 function centerZoom(t) {
   var e = topojson.mesh(t, t.objects.polygons, function(t, e) {
@@ -99,17 +105,17 @@ function centerZoom(t) {
   });
   projection.scale(1).translate([0, 0]);
   var a = path.bounds(e),
-    n =
+    s =
       1 /
       Math.max(
         (a[1][0] - a[0][0]) / width,
         ((a[1][1] - a[0][1]) / height) * 1.1
       ),
-    s = [
-      (width - n * (a[1][0] + a[0][0])) / 2,
-      0.5 * (height - n * (a[1][1] + a[0][1]))
+    n = [
+      (width - s * (a[1][0] + a[0][0])) / 2,
+      0.5 * (height - s * (a[1][1] + a[0][1]))
     ];
-  projection.scale(n).translate(s);
+  projection.scale(s).translate(n);
   return e;
 }
 function drawOuterBoundary(t, e) {
