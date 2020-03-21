@@ -1,31 +1,45 @@
-
-
 @font-face {
-    font-family: GrotekMed;
-    src: url("../fonts/HKGroteskPro-Medium.woff2") format("opentype");
+  font-family: GrotekMed;
+  src: url("../fonts/HKGroteskPro-Medium.woff2") format("opentype");
 }
 
 @font-face {
-    font-family: GrotekBold;
-    src: url("../fonts/Graphik-Bold.woff2") format("opentype");
+  font-family: GrotekBold;
+  src: url("../fonts/Graphik-Bold.woff2") format("opentype");
 }
 
 body {
-    background-color: #e3eef1;
-    margin-top: 2rem;
-    font-family: GrotekMed;
-  }
+  background-color: #e3eef1;
+  margin-top: 2rem;
+  font-family: GrotekMed;
+}
 
-  #grad {
-    background-color: #e3eef1;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    color: black;
-    font-family: GrotekMed;
-    -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);
-  }
+#grad {
+  background-color: #e3eef1;
+  border-radius: 1rem;
+  margin-top: 1rem;
+  color: black;
+  font-family: GrotekMed;
+  -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+}
 
-.tipps{
+path.subunit:hover {
+  fill-opacity: 0.8;
+}
+
+div.tooltip {
+  position: absolute;
+  padding: 5px 10px;
+  color: black;
+  border-radius: 4px;
+  font: 12px sans-serif;
+  background: white;
+  border: 1px solid black;
+  pointer-events: none;
+  min-width: 150px;
+}
+
+.tipps {
   background-color: #e3eef1;
   border-radius: 1rem;
   margin-top: 2rem;
@@ -33,122 +47,116 @@ body {
   padding: 2rem;
   color: black;
   font-family: GrotekMed;
-  -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);
+  -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
 }
 
-th{
-        font-family: GrotekBold;
+th {
+  font-family: GrotekBold;
 }
 
-.tipps_heading{
-      font-family: GrotekBold;
+.tipps_heading {
+  font-family: GrotekBold;
 }
 
-.tipps ul li{
+.tipps ul li {
   list-style-type: none;
 }
 
-  thread{
-    border-radius: 1rem;
-  }
+thread {
+  border-radius: 1rem;
+}
 
-  .india-data {
-    background-image: linear-gradient(to right, #f953c6, #b91d73);
-    border-radius: 10px;
-  }
-  #header {
-    text-align: center;
-    color: black;
-    font-family: GrotekBold;
-    margin-bottom: 2rem;
-  }
+.india-data {
+  background-image: linear-gradient(to right, #f953c6, #b91d73);
+  border-radius: 10px;
+}
+#header {
+  text-align: center;
+  color: black;
+  font-family: GrotekBold;
+  margin-bottom: 2rem;
+}
 
-  #news{
-    text-align: center;
-  }
+#news {
+  text-align: center;
+}
 
-  .card {
-  	text-align: initial;
-  }
+.card {
+  text-align: initial;
+}
 
-.text-center
-{
-     text-align: center;
-    color: black;
-    margin-top: 3rem;
-    font-family: GrotekBold;
-    margin-bottom: 2rem;
+.text-center {
+  text-align: center;
+  color: black;
+  margin-top: 3rem;
+  font-family: GrotekBold;
+  margin-bottom: 2rem;
+}
 
-  }
+.text-p {
+  text-align: center;
+  color: black;
+  margin-top: 1rem;
+  font-family: GrotekBold;
+  margin-bottom: 2rem;
+}
 
-  .text-p
-  {
-       text-align: center;
-      color: black;
-      margin-top: 1rem;
-      font-family: GrotekBold;
-      margin-bottom: 2rem;
+.footer {
+  background: #e3eef1;
+  padding-top: 1rem;
+}
 
-    }
+.btn-icon i {
+  text-align: center;
+  font-size: 22px;
+  width: 26px;
+  color: #000;
+  line-height: 24px;
+  padding-top: 1px;
+}
 
+.btn-icon {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 10px;
+  border-radius: 100%;
+  transition: 0.3s all ease-in-out;
+}
 
-    .footer{
-         background:#e3eef1;
-         padding-top:1rem;
-    }
+.btn-icon:hover {
+  transition: 0.3s all ease-in-out;
+  transform: scale(0.8);
+}
 
+.btn-icon:focus {
+  transition: 0.3s ease-in-out;
+  transform: scale(0.8);
+}
 
-    .btn-icon i {
-        text-align: center;
-        font-size: 22px;
-        width: 26px;
-        color: #000;
-        line-height: 24px;
-        padding-top: 1px;
-    }
+.icon-row {
+  justify-content: center;
+}
 
-    .btn-icon {
-        background-color: rgba(0,0,0,0.1);
-        padding: 10px;
-        margin: 10px;
-        border-radius: 100%;
-        transition: 0.3s all ease-in-out;
-    }
+.footer {
+  margin: 0 auto;
+  text-align: center;
+}
 
-    .btn-icon:hover{
-        transition: 0.3s all ease-in-out;
-        transform: scale(0.8);
-    }
+.credits {
+  font-size: 14px;
+  padding: 10px;
+  display: block;
+}
 
-    .btn-icon:focus{
-        transition: 0.3s ease-in-out;
-        transform: scale(0.8);
-    }
+.credits span {
+  font-family: GrotekMed;
+  color: black;
+}
 
-    .icon-row {
-        justify-content: center;
-    }
+a:hover {
+  text-decoration: none;
+}
 
-    .footer {
-        margin:0 auto;
-        text-align: center;
-    }
-
-    .credits {
-        font-size: 14px;
-        padding: 10px;
-        display: block;
-    }
-
-    .credits span {
-        font-family: GrotekMed;
-        color:black;
-    }
-
-     a:hover{
-        text-decoration: none;
-     }
-
-     a:focus{
-        text-decoration: none;
-     }
+a:focus {
+  text-decoration: none;
+}
