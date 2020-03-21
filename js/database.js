@@ -22,7 +22,7 @@ $(document).ready(function() {
       k += "<td>" + mainObj[i].discharged + "</td>";
       k += "</tr>";
     }
-    k += "</tbody>";
+    k += "</tbody> ";
     document.getElementById("tableData").innerHTML = k;
     var j = "<tbody>";
     j += "<tr>";
