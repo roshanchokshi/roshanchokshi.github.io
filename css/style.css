@@ -25,6 +25,29 @@ body {
     -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);
   }
 
+.tipps{
+  background-color: #e3eef1;
+  border-radius: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  color: black;
+  font-family: GrotekMed;
+  -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);
+}
+
+th{
+        font-family: GrotekBold;
+}
+
+.tipps_heading{
+      font-family: GrotekBold;
+}
+
+.tipps ul li{
+  list-style-type: none;
+}
+
   thread{
     border-radius: 1rem;
   }

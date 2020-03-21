@@ -18,6 +18,7 @@ $(document).ready(function() {
         "<td>" +
         (mainObj[i].confirmedCasesIndian + mainObj[i].confirmedCasesForeign) +
         "</td>";
+      k += "<td>" + ((mainObj[i].confirmedCasesIndian + mainObj[i].confirmedCasesForeign) - mainObj[i].deaths - mainObj[i].discharged) + "</td>";
       k += "<td>" + mainObj[i].deaths + "</td>";
       k += "<td>" + mainObj[i].discharged + "</td>";
       k += "</tr>";
