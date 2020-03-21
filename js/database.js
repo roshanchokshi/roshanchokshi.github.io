@@ -27,7 +27,7 @@ $(document).ready(function() {
     var j = "<tbody>";
     j += "<tr>";
     j += "<td>" + Obj.total + "</td>";
-    j += "<td>" + (Obj.total - Obj.discharged) + "</td>";
+    j += "<td>" + (Obj.total - Obj.deaths - Obj.discharged) + "</td>";
     j += "<td>" + Obj.confirmedCasesIndian + "</td>";
     j += "</tr>";
     j += "</tbody>";
