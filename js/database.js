@@ -106,7 +106,7 @@ $(document).ready(function() {
             {
               display: true,
               ticks: {
-                display: true
+                display: false
               },
               scaleLabel: {
                 display: true,
