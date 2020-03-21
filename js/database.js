@@ -27,6 +27,7 @@ $(document).ready(function() {
     var j = "<tbody>";
     j += "<tr>";
     j += "<td>" + Obj.total + "</td>";
+    j += "<td>" + (Obj.total - Obj.discharged) + "</td>";
     j += "<td>" + Obj.confirmedCasesIndian + "</td>";
     j += "<td>" + Obj.confirmedCasesForeign + "</td>";
     j += "<td>" + Obj.deaths + "</td>";
@@ -100,7 +101,7 @@ $(document).ready(function() {
             {
               display: true,
               ticks: {
-                display: false
+                display: true
               },
               scaleLabel: {
                 display: true,
