@@ -29,12 +29,17 @@ $(document).ready(function() {
     j += "<td>" + Obj.total + "</td>";
     j += "<td>" + (Obj.total - Obj.discharged) + "</td>";
     j += "<td>" + Obj.confirmedCasesIndian + "</td>";
+    j += "</tr>";
+    j += "</tbody>";
+    document.getElementById("india-data1").innerHTML = j;
+    var j = "<tbody>";
+    j += "<tr>";
     j += "<td>" + Obj.confirmedCasesForeign + "</td>";
     j += "<td>" + Obj.deaths + "</td>";
     j += "<td>" + Obj.discharged + "</td>";
     j += "</tr>";
     j += "</tbody>";
-    document.getElementById("india-data").innerHTML = j;
+    document.getElementById("india-data2").innerHTML = j;
   });
 });
 
