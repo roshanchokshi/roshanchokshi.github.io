@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="theme-color" content="#4d2d75" />
+    <meta name="theme-color" content="#e3eef1" />
     <title>Coronavirus Update(Live)</title>
     <!-- MDB icon -->
     <link rel="icon" href="favicon.png" type="image/x-icon" />
@@ -27,34 +27,13 @@
     />
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css">
     <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Your custom styles (optional) -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    <style>
-      body {
-        /* background-color: #c34271; */
-        background-color: #4d2d75;
-        /* background-image: linear-gradient(to right, #cb356b, #bd3f32); */
-        font-family: "Sen", sans-serif;
-      }
-      #grad {
-        /* background-color: #f070a1; */
-        background-color: #7649ad;
-        /* background-image: linear-gradient(to right, #eb5757, #000000); */
-        border-radius: 15px;
-        margin-top: 10px;
-        color: whitesmoke;
-      }
-      .india-data {
-        background-image: linear-gradient(to right, #f953c6, #b91d73);
-        border-radius: 20px;
-      }
-      #header {
-        text-align: center;
-        color: whitesmoke;
-      }
-    </style>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160812748-2"></script>
 <script>
@@ -83,6 +62,15 @@
         </thead>
         <tbody id="india-data"></tbody>
       </table>
+      <div class="container" style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
+        <div class="row">
+          <div class="col">
+            <h2 class="text-p">Indian state wise Graphical Analytics</2>
+                <canvas id="canvas" style="margin-top: 32px;"></canvas>
+          </div>
+        </div>
+      </div>
+
       <table id="grad" class="table table-borderless">
         <thead>
           <tr>
@@ -94,70 +82,37 @@
         </thead>
         <tbody id="tableData"></tbody>
       </table>
-      <script>
-        $(document).ready(function() {
-          $.getJSON(
-            "https://api.rootnet.in/covid19-in/stats/latest",
-            null,
-            function(data) {
-              Obj = data.data.summary;
-              mainObj = data.data.regional.sort(function(a, b) {
-                return (
-                  b.confirmedCasesIndian +
-                  b.confirmedCasesForeign -
-                  (a.confirmedCasesIndian + a.confirmedCasesForeign)
-                );
-              });
-              var k = "<tbody>";
-              for (i = 0; i < mainObj.length; i++) {
-                k += "<tr>";
-                k += "<td>" + mainObj[i].loc + "</td>";
-                k +=
-                  "<td>" +
-                  (mainObj[i].confirmedCasesIndian +
-                    mainObj[i].confirmedCasesForeign) +
-                  "</td>";
-                k += "<td>" + mainObj[i].deaths + "</td>";
-                k += "<td>" + mainObj[i].discharged + "</td>";
-                k += "</tr>";
-              }
-              k += "</tbody>";
-              document.getElementById("tableData").innerHTML = k;
-              var j = "<tbody>";
-              j += "<tr>";
-              j += "<td>" + Obj.total + "</td>";
-              j += "<td>" + Obj.confirmedCasesIndian + "</td>";
-              j += "<td>" + Obj.confirmedCasesForeign + "</td>";
-              j += "<td>" + Obj.deaths + "</td>";
-              j += "<td>" + Obj.discharged + "</td>";
-              j += "</tr>";
-              j += "</tbody>";
-              document.getElementById("india-data").innerHTML = j;
-              console.log(Obj);
-            }
-          );
-        });
-      </script>
-    </div>
-    <div class="container my-5"></div>
-    <section
-      class="px-md-5 mx-md-5 py-5 text-center white-text elegant-color z-depth-1 rounded"
-    >
-      <h3 class="">
-        Made with <i class="fas fa-heart red-text mx-1"></i> by
-        <a href="instagram.com/roshan.py">Rosh</a>
-      </h3>
-      <h6>
-        Data:
-        <a href="https://www.mohfw.gov.in/"> Ministry of Health and Welfare</a>
-      </h6>
 
-      <h6>
-        API:
-        <a href="https://github.com/amodm/api-covid19-in">Amod Malviya</a>
-      </h6>
-    </section>
+      <div class="news_card">
+              <h2 class="text-center">Global Headlines on COVID-19 (Coronavirus)</2>
+                <div class="news_container"  style="margin-top:2rem;" id="news">
+                </div>
+          </div>
+    <div class="container my-5" style="margin-bottom:3rem;"></div>
 
+    <div class="footer">
+           <div class="row icon-row">
+               <a href="https://codepen.io/harsh-vardhan/" class="btn-icon" target="_blank"> <i class="fab fa-codepen"></i> </a>
+               <a href="https://dribbble.com/electronlabs/" class="btn-icon" target="_blank"> <i class="fab fa-dribbble"></i> </a>
+               <a href="https://t.me/iamharshdeb/" class="btn-icon" target="_blank"> <i class="fab fa-telegram"></i> </a>
+               <a href="https://instagram.com/iamharsh.dev" class="btn-icon" target="_blank"> <i class="fab fa-instagram"></i> </a>
+               <a href="https://www.github.com/theuitown/" class="btn-icon" target="_blank"> <i class="fab fa-github"></i> </a>
+           </div>
+           <div class="credits">
+               <span>Made with 😍 </span>
+              <span> by <a href="https://iamharsh.design/" target="_blank">iamharsh.dev  & <a href="https://instagram.com/roshan.py" target="_blank"> Roshan</a></span>
+           </div>
+           <a href="https://instagram.com/roshan.py" target="_blank" class="credits">
+               <span>Follow Roshan </span>
+              <span>on instagram</span>
+           </a>
+        <a href="https://www.mohfw.gov.in/" target="_blank" class="credits"> <span>Data: Ministry of</span><span> Health and Welfare</span></a>
+        <a href="https://github.com/amodm/api-covid19-in" target="_blank" class="credits"><span>API: Amod Malviya</span></a>
+       </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+
+<script type="text/javascript" src="js/database.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
