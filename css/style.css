@@ -204,10 +204,6 @@ a:focus {
   display: none;
 }
 
-#fastvaladata{
-  display: none;
-}
-
 #btn-map{
 transition: 0.4s all ease-in-out;
 }
