@@ -8,6 +8,45 @@
   src: url("../fonts/Graphik-Bold.woff2") format("opentype");
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+
+html,
+html *,
+body,
+body * {
+  cursor: none;
+}
+
+.cursor-dot,
+.cursor-dot-outline {
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #000;
+}
+
+.cursor-dot-outline {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: 2px solid #000;
+}
+
 body {
   background-color: #e3eef1;
   margin-top: 2rem;
