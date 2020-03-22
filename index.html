@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Your custom styles (optional) -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    
+
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160812748-2"></script>
@@ -73,7 +73,7 @@
           <tbody id="india-data2"></tbody>
         </thead>
       </table>
-      <h4 class="text-p">Faster Data From <a href="https://www.worldometers.info/coronavirus/">Worldometers</a></h4>
+      <h4 class="text-p" style="margin-top:2rem;">Faster Data From <a href="https://www.worldometers.info/coronavirus/">Worldometers</a></h4>
       <table id="grad" class="table table-borderless">
         <thead>
           <tr>
@@ -86,14 +86,20 @@
         </thead>
       </table>
 
-      <div class="container" style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
-        <h2 class="text-p">Indian state wise Interactive Map</h2>
-        <center>
-        <div class="container" id="map">
-        </center>
+      <div class="buttons-for-userchoice" style="margin-top:2rem;">
+        <button class="btn btn-main" id="btn-map" style="border-radius:10px;">Map</button>
+        <button class="btn btn-main" id="btn-graph" style="border-radius:10px;">Graph</button>
       </div>
+      <div class="container" id="map-data" style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
+          <div id="map-data1">
+            <h2 class="text-p">Indian state wise Interactive Map</h2>
+            <center>
+            <div class="container" id="map">
+            </center>
+            </div>
+          </div>
 
-      <div class="container" style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
+      <div class="container" id="graph-data" style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
         <div class="row">
           <div class="col">
             <h2 class="text-p">Indian state wise Graphical Analytics</2>
@@ -166,7 +172,7 @@ More rarely, the disease can be serious and even fatal. Older people, and people
           </div>
     <div class="container my-5" style="margin-bottom:3rem;"></div>
 
-    <div class="footer" style="padding-bottom:1rem;">
+    <div class="footer" style="padding-bottom:1.5rem;">
 
            <div class="row icon-row">
                <a href="https://instagram.com/roshan.py" class="btn-icon" target="_blank"> <i class="fab fa-instagram"></i> </a>
@@ -183,7 +189,7 @@ More rarely, the disease can be serious and even fatal. Older people, and people
               <a href="https://github.com/amodm/api-covid19-in" target="_blank" >Amod Malviya</a></span>
            </div>
 
-        
+
         <span><a href="https://github.com/roshanchokshi/roshanchokshi.github.io" target="_blank"> GoCorona</a> is an opensource project you can also make changes and create a pull request.  </span>
        </div>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
@@ -191,7 +197,7 @@ More rarely, the disease can be serious and even fatal. Older people, and people
        <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
-    
+
 <script type="text/javascript" src="js/database.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>

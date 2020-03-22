@@ -160,3 +160,15 @@ a:hover {
 a:focus {
   text-decoration: none;
 }
+
+#graph-data{
+  display: none;
+}
+
+#btn-map{
+transition: 0.4s all ease-in-out;
+}
+
+#btn-graph{
+transition: 0.4s all ease-in-out;
+}

@@ -202,3 +202,19 @@ $.getJSON("https://coronavirus-worlddata.herokuapp.com/", null, function(data) {
   j += "</tbody>";
   document.getElementById("faster-data").innerHTML = j;
 });
+
+$(document).ready(function() {
+  $('#btn-graph').on('click',function(){
+    var graph=document.getElementById('graph-data');
+    var map=document.getElementById('map-data');
+    graph.style.display='block';
+    map.style.display='none';
+  });
+
+  $('#btn-map').on('click',function(){
+    var graph=document.getElementById('graph-data');
+    var map=document.getElementById('map-data');
+    graph.style.display='none';
+    map.style.display='block';
+  });
+});
