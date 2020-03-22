@@ -18,7 +18,13 @@ $(document).ready(function() {
         "<td>" +
         (mainObj[i].confirmedCasesIndian + mainObj[i].confirmedCasesForeign) +
         "</td>";
-      k += "<td>" + ((mainObj[i].confirmedCasesIndian + mainObj[i].confirmedCasesForeign) - mainObj[i].deaths - mainObj[i].discharged) + "</td>";
+      k +=
+        "<td>" +
+        (mainObj[i].confirmedCasesIndian +
+          mainObj[i].confirmedCasesForeign -
+          mainObj[i].deaths -
+          mainObj[i].discharged) +
+        "</td>";
       k += "<td>" + mainObj[i].deaths + "</td>";
       k += "<td>" + mainObj[i].discharged + "</td>";
       k += "</tr>";
@@ -177,4 +183,22 @@ $(document).ready(function() {
       }
     }
   );
+});
+
+let resp = null;
+
+// $.get("https://coronavirus-worlddata.herokuapp.com/", function(d) {
+//   resp = d;
+// });
+$.getJSON("https://coronavirus-worlddata.herokuapp.com/", null, function(data) {
+  resp = data.India;
+  var j = "<tbody>";
+  j += "<tr>";
+  j += "<td>" + resp.total + "</td>";
+  j += "<td>" + resp.active + "</td>";
+  j += "<td>" + resp.deaths + "</td>";
+  j += "<td>" + resp.cured + "</td>";
+  j += "</tr>";
+  j += "</tbody>";
+  document.getElementById("faster-data").innerHTML = j;
 });
