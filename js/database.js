@@ -217,4 +217,18 @@ $(document).ready(function() {
     graph.style.display='none';
     map.style.display='block';
   });
+
+  $('#btn-offical').on('click',function(){
+    var off=document.getElementById('offical-data');
+    var tejj=document.getElementById('fastvaladata');
+    off.style.display='block';
+    tejj.style.display='none';
+  });
+
+  $('#btn-fast').on('click',function(){
+    var off=document.getElementById('offical-data');
+    var tejj=document.getElementById('fastvaladata');
+    off.style.display='none';
+    tejj.style.display='block';
+  });
 });
