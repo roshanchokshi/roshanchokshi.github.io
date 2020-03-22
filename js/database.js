@@ -132,7 +132,7 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $.getJSON(
-    "https://newsapi.org/v2/everything?q=coronavirus%20AND%20%22corona%20virus%22%20AND%20%22COVID-19%22&apiKey=6f105da0c6c94d63a15d10df7f17efdf",
+    "http://newsapi.org/v2/top-headlines?country=in&q=coronavirus&apiKey=6f105da0c6c94d63a15d10df7f17efdf",
     null,
     function(data) {
       var news = document.getElementById("news");
