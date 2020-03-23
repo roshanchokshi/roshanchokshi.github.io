@@ -4359,7 +4359,7 @@
         {
           "arcs": [[-137, 153, -136, 154]],
           "type": "Polygon",
-          "properties": { "st_nm": "Union Territory of Ladakh" }
+          "properties": { "st_nm": "Ladakh" }
         }
       ]
     }
