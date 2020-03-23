@@ -186,12 +186,14 @@ $(document).ready(function() {
 });
 
 let resp = null;
+let resp2 = null;
 
 // $.get("https://coronavirus-worlddata.herokuapp.com/", function(d) {
 //   resp = d;
 // });
 $.getJSON("https://coronavirus-worlddata.herokuapp.com/", null, function(data) {
   resp = data.India;
+  // resp2 = data.USA;
   var j = "<tbody>";
   j += "<tr>";
   j += "<td>" + resp.total + "</td>";
@@ -200,35 +202,43 @@ $.getJSON("https://coronavirus-worlddata.herokuapp.com/", null, function(data) {
   j += "<td>" + resp.cured + "</td>";
   j += "</tr>";
   j += "</tbody>";
+  // j += "<p>" + resp2.total + "</p>";
   document.getElementById("faster-data").innerHTML = j;
 });
 
 $(document).ready(function() {
-  $('#btn-graph').on('click',function(){
-    var graph=document.getElementById('graph-data');
-    var map=document.getElementById('map-data');
-    graph.style.display='block';
-    map.style.display='none';
+  $("#btn-graph").on("click", function() {
+    var graph = document.getElementById("graph-data");
+    var map = document.getElementById("map-data");
+    graph.style.display = "block";
+    map.style.display = "none";
   });
 
-  $('#btn-map').on('click',function(){
-    var graph=document.getElementById('graph-data');
-    var map=document.getElementById('map-data');
-    graph.style.display='none';
-    map.style.display='block';
+  $("#btn-map").on("click", function() {
+    var graph = document.getElementById("graph-data");
+    var map = document.getElementById("map-data");
+    graph.style.display = "none";
+    map.style.display = "block";
   });
 
-  $('#btn-offical').on('click',function(){
-    var off=document.getElementById('offical-data');
-    var tejj=document.getElementById('fastvaladata');
-    off.style.display='block';
-    tejj.style.display='none';
+  $("#btn-offical").on("click", function() {
+    var off = document.getElementById("offical-data");
+    var tejj = document.getElementById("fastvaladata");
+    off.style.display = "block";
+    tejj.style.display = "none";
   });
 
-  $('#btn-fast').on('click',function(){
-    var off=document.getElementById('offical-data');
-    var tejj=document.getElementById('fastvaladata');
-    off.style.display='none';
-    tejj.style.display='block';
+  $("#btn-fast").on("click", function() {
+    var off = document.getElementById("offical-data");
+    var tejj = document.getElementById("fastvaladata");
+    off.style.display = "none";
+    tejj.style.display = "block";
   });
 });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/sw.js")
+    .then(reg => console.log("service worker registered"))
+    .catch(err => console.log("service worker not registered", err));
+}
