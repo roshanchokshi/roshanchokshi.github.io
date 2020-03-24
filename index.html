@@ -244,21 +244,7 @@
 
         shareBtn.classList.add('invisible')
 
-      } /*  else {
-
-        navigator.share({
-          title: 'Coronavirus Update(Live)',
-          text: 'Get COVID-19 Live updates of Indian States',
-          url: 'https://gocorona.wtf'
-        }).then(() => {
-          console.log('share')
-        }).catch(() => {
-          alert('Cannot Share 😑😥')
-        })
-
-      } -->*/
-
-      else {
+      } else {
         shareBtn.addEventListener('click', () => {
           navigator.share({
             title: 'COVID-19 Live Updates',
@@ -267,7 +253,7 @@
           }).then(() => {
 
           }).catch(() => {
-            
+
           })
         })
       }
