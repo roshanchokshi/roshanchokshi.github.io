@@ -215,3 +215,33 @@ transition: 0.4s all ease-in-out;
 #btn-graph{
 transition: 0.4s all ease-in-out;
 }
+
+/* Floating action button */
+
+
+.icon{
+  width: 30px;
+  height: 30px;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  background: #E3EEF1;
+  box-shadow:  8px 8px 16px #c8d1d4, 
+             -8px -8px 16px #feffff;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 20;
+  opacity: 0.5;
+  transition: opacity 0.1s;
+}
+
+.icon:active, .icon:hover{
+  opacity: 1;
+}
+
+.invisible{
+  display: none;
+}
