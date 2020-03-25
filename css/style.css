@@ -14,7 +14,6 @@
   box-sizing: border-box;
 }
 
-
 html,
 html *,
 body,
@@ -200,22 +199,25 @@ a:focus {
   text-decoration: none;
 }
 
-#graph-data{
+#graph-data {
   display: none;
 }
 
-#btn-map{
-transition: 0.4s all ease-in-out;
+#fast-data {
+  display: none;
 }
 
-#btn-graph{
-transition: 0.4s all ease-in-out;
+#btn-map {
+  transition: 0.4s all ease-in-out;
+}
+
+#btn-graph {
+  transition: 0.4s all ease-in-out;
 }
 
 /* Floating action button */
 
-
-.icon{
+.icon {
   width: 30px;
   height: 30px;
   padding: 30px;
@@ -223,9 +225,8 @@ transition: 0.4s all ease-in-out;
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background: #E3EEF1;
-  box-shadow:  8px 8px 16px #c8d1d4, 
-             -8px -8px 16px #feffff;
+  background: #e3eef1;
+  box-shadow: 8px 8px 16px #c8d1d4, -8px -8px 16px #feffff;
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -234,10 +235,11 @@ transition: 0.4s all ease-in-out;
   transition: opacity 0.1s;
 }
 
-.icon:active, .icon:hover{
+.icon:active,
+.icon:hover {
   opacity: 1;
 }
 
-.invisible{
+.invisible {
   display: none;
 }
