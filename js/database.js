@@ -138,14 +138,14 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $.getJSON(
-    "https://newsapi.org/v2/top-headlines?country=in&q=coronavirus&sortBy=publishedAt&apiKey=9a6d3df049ba4366b191361ba12dda90",
+    "https://cryptic-ravine-96718.herokuapp.com/",
     null,
     function(data) {
       var news = document.getElementById("news");
       var newcol = document.createElement("ul");
       newcol.setAttribute("class", "list-inline");
       news.appendChild(newcol);
-      for (var i = 0; i < 8; i++) {
+      for (var i = 0; i < 12; i++) {
         var li = document.createElement("li");
         li.setAttribute("class", "list-inline-item");
         var card = document.createElement("div");
@@ -156,25 +156,20 @@ $(document).ready(function() {
         // card.style.border="2px solid black";
         card.style.boxShadow = "none";
         var card_title = document.createElement("h5");
-        card_title.innerHTML = data.articles[i].title.substr(0, 40) + "...";
+        card_title.innerHTML = data.news[i].title;
         card_title.setAttribute("classs", "card-title");
-        var card_desc = document.createElement("p");
-        card_desc.innerHTML =
-          data.articles[i].description.substr(0, 150) + "....";
-        card_desc.setAttribute("class", "card-text");
         var news_img = document.createElement("img");
-        news_img.setAttribute("src", data.articles[i].urlToImage);
+        news_img.setAttribute("src", data.news[i].img);
         news_img.setAttribute("class", "card-img-top");
         var btntoart = document.createElement("a");
         btntoart.setAttribute("class", "btn btn-main");
         btntoart.style.color = "#fff";
         btntoart.style.background = "#000";
-        btntoart.setAttribute("href", data.articles[i].url);
+        btntoart.setAttribute("href", data.news[i].link);
         btntoart.innerHTML = "Read More";
         var card_body = document.createElement("div");
         card_body.setAttribute("class", "card-body");
         card_body.appendChild(card_title);
-        card_body.appendChild(card_desc);
         card_body.appendChild(btntoart);
         card.appendChild(news_img);
         card.appendChild(card_body);
@@ -186,12 +181,14 @@ $(document).ready(function() {
 });
 
 let resp = null;
+let resp2 = null;
 
 // $.get("https://coronavirus-worlddata.herokuapp.com/", function(d) {
 //   resp = d;
 // });
 $.getJSON("https://coronavirus-worlddata.herokuapp.com/", null, function(data) {
   resp = data.India;
+  // resp2 = data.USA;
   var j = "<tbody>";
   j += "<tr>";
   j += "<td>" + resp.total + "</td>";
@@ -200,21 +197,29 @@ $.getJSON("https://coronavirus-worlddata.herokuapp.com/", null, function(data) {
   j += "<td>" + resp.cured + "</td>";
   j += "</tr>";
   j += "</tbody>";
+  // j += "<p>" + resp2.total + "</p>";
   document.getElementById("faster-data").innerHTML = j;
 });
 
 $(document).ready(function() {
-  $('#btn-graph').on('click',function(){
-    var graph=document.getElementById('graph-data');
-    var map=document.getElementById('map-data');
-    graph.style.display='block';
-    map.style.display='none';
+  $("#btn-graph").on("click", function() {
+    var graph = document.getElementById("graph-data");
+    var map = document.getElementById("map-data");
+    graph.style.display = "block";
+    map.style.display = "none";
   });
 
-  $('#btn-map').on('click',function(){
-    var graph=document.getElementById('graph-data');
-    var map=document.getElementById('map-data');
-    graph.style.display='none';
-    map.style.display='block';
+  $("#btn-map").on("click", function() {
+    var graph = document.getElementById("graph-data");
+    var map = document.getElementById("map-data");
+    graph.style.display = "none";
+    map.style.display = "block";
   });
 });
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/sw.js")
+    .then(reg => console.log("service worker registered"))
+    .catch(err => console.log("service worker not registered", err));
+}

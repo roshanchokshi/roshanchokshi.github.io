@@ -81,7 +81,7 @@ function populate(t) {
     $(".myTable").DataTable({ paging: !1, bFilter: !1, order: [[1, "desc"]] });
   var l = d3
     .scaleLinear()
-    .domain([-2, parseInt(27), 45])
+    .domain([-2, parseInt(45), 75])
     .range(["#ddd", "#0794DB", "#050D7F"]);
   d3.json(
     "https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/map.json",

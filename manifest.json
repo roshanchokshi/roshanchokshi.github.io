@@ -1,0 +1,21 @@
+{
+  "name": "Go Corona",
+  "short_name": "Go Corona",
+  "icons": [
+    {
+      "src": "heart1.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "heart.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#e3eef1",
+  "theme_color": "#5dbcd2"
+}

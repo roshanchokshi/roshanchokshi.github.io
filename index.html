@@ -1,61 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- mobile meta (hooray!) -->
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="theme-color" content="#e3eef1" />
-    <title>Coronavirus Update(Live)</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="favicon.png" type="image/x-icon" />
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.11.2/css/all.css"
-    />
-    <!-- Google Fonts Roboto -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    />
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Material Design Bootstrap -->
-    <link rel="stylesheet" href="css/mdb.min.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <!-- Your custom styles (optional) -->
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- mobile meta (hooray!) -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="theme-color" content="#e3eef1" />
+  <title>Coronavirus Update(Live)</title>
+  <!-- MDB icon -->
+  <link rel="icon" href="favicon.png" type="image/x-icon" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
+  <!-- Google Fonts Roboto -->
+  <link href="https://fonts.googleapis.com/css?family=Sen:400,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="manifest" href="manifest.json">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Material Design Bootstrap -->
+  <link rel="stylesheet" href="css/mdb.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!-- Your custom styles (optional) -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160812748-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160812748-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'UA-160812748-2');
-</script>
-    <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101242188);</script>
-<script async src="//static.getclicky.com/js"></script>
+    gtag('config', 'UA-160812748-2');
+  </script>
+  <script>var clicky_site_ids = clicky_site_ids || []; clicky_site_ids.push(101242188);</script>
+  <script async src="//static.getclicky.com/js"></script>
 
-  </head>
-  <body>
-    <div class="container">
-      <h2 id="header">Covid-19 Coronavirus Outbreak In India</h2>
+</head>
+
+<body>
+  <div class="container">
+    <a target="_blank" rel="noopener noreferrer" id="shareBtn" class="floating-btn icon"><i class="fa fa-share-alt "
+        aria-hidden="true"></i></a>
+    <h2 id="header">Covid-19 Coronavirus Outbreak In India</h2>
+
+    <div class="buttons-for-userchoice" style="margin-top:2rem;">
+      <button class="btn btn-main" id="btn-offical" style="border-radius:10px;">Official</button>
+      <button class="btn btn-main" id="btn-fast" style="border-radius:10px;">Latest</button>
+    </div>
+
+    <div id="offical-data">
       <h4 class="text-p">Official Data From <a href="https://www.mohfw.gov.in/">Ministry of Health and Welfare</a></h4>
       <table id="grad" class="table table-borderless">
         <thead>
@@ -64,16 +65,20 @@
             <th>Total Active Cases</th>
             <th>Indians</th>
           </tr>
-          <tbody id="india-data1"></tbody>
-          <tr>
-            <th>Foreigners</th>
-            <th>Deaths</th>
-            <th>Cured</th>
-          </tr>
-          <tbody id="india-data2"></tbody>
+        <tbody id="india-data1"></tbody>
+        <tr>
+          <th>Foreigners</th>
+          <th>Deaths</th>
+          <th>Cured</th>
+        </tr>
+        <tbody id="india-data2"></tbody>
         </thead>
       </table>
-      <h4 class="text-p" style="margin-top:2rem;">Faster Data From <a href="https://www.worldometers.info/coronavirus/">Worldometers</a></h4>
+    </div>
+
+    <section id="fastvaladata">
+      <h4 class="text-p" style="margin-top:2rem;">Latest Data From <a
+          href="https://www.worldometers.info/coronavirus/">Worldometers</a></h4>
       <table id="grad" class="table table-borderless">
         <thead>
           <tr>
@@ -82,127 +87,147 @@
             <th>Deaths</th>
             <th>Cured</th>
           </tr>
-          <tbody id="faster-data"></tbody>
+        <tbody id="faster-data"></tbody>
         </thead>
       </table>
+    </section>
 
-      <div class="buttons-for-userchoice" style="margin-top:2rem;">
-        <button class="btn btn-main" id="btn-map" style="border-radius:10px;">Map</button>
-        <button class="btn btn-main" id="btn-graph" style="border-radius:10px;">Graph</button>
+    <div class="buttons-for-userchoice" style="margin-top:2rem;">
+      <button class="btn btn-main" id="btn-map" style="border-radius:10px;">Map</button>
+      <button class="btn btn-main" id="btn-graph" style="border-radius:10px;">Graph</button>
+    </div>
+    <div class="container" id="map-data"
+      style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
+      <div id="map-data1">
+        <h2 class="text-p">Indian state wise Interactive Map</h2>
+        <center>
+          <div class="container" id="map">
+        </center>
       </div>
-      <div class="container" id="map-data" style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
-          <div id="map-data1">
-            <h2 class="text-p">Indian state wise Interactive Map</h2>
-            <center>
-            <div class="container" id="map">
-            </center>
-            </div>
-          </div>
+    </div>
 
-      <div class="container" id="graph-data" style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
+    <div class="container" id="graph-data"
+      style="padding:1rem;border-radius: 1rem;-webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,.15);margin-top:2rem;margin-bottom:2rem;">
+      <div class="row">
+        <div class="col">
+          <h2 class="text-p">Indian state wise Graphical Analytics</2>
+            <canvas id="canvas" style="margin-top: 32px;"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <table id="grad" class="table table-borderless">
+      <thead>
+        <tr>
+          <th>State</th>
+          <th>Cases</th>
+          <th>Active Cases</th>
+          <th>Deaths</th>
+          <th>Cured</th>
+        </tr>
+      </thead>
+      <tbody id="tableData"></tbody>
+    </table>
+
+    <section class="few_tips">
+      <div class="container">
         <div class="row">
           <div class="col">
-            <h2 class="text-p">Indian state wise Graphical Analytics</2>
-                <canvas id="canvas" style="margin-top: 32px;"></canvas>
+            <div class="tipps">
+              <h2 class="tipps_heading">Protective measures against the Coronavirus (COVID-19)</h2>
+              <img src="" alt="">
+              <p class="tipps_p">You can protect yourself and help prevent spreading the virus to others if you:</p>
+              <ul class="skills-list" style="padding-left: 0px;">
+                <li><i class="fas fa-check"> </i><span> </span> Wash your hands regularly for 20 seconds, with soap and
+                  water or alcohol-based hand rub</li>
+                <li><i class="fas fa-check"> </i><span> </span>Cover your nose and mouth with a disposable tissue or
+                  flexed elbow when you cough or sneeze</li>
+                <li><i class="fas fa-check"> </i><span> </span>Avoid close contact (1 meter or 3 feet) with people who
+                  are unwell</li>
+                <li><i class="fas fa-check"> </i><span> </span>Stay home and self-isolate from others in the household
+                  if you feel unwell</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
 
-      <table id="grad" class="table table-borderless">
-        <thead>
-          <tr>
-            <th>State</th>
-            <th>Cases</th>
-            <th>Active Cases</th>
-            <th>Deaths</th>
-            <th>Cured</th>
-          </tr>
-        </thead>
-        <tbody id="tableData"></tbody>
-      </table>
+    </section>
 
-      <section class="few_tips">
-        <div class="container">
-            <div class="row">
-              <div class="col">
-                <div class="tipps">
-                  <h2 class="tipps_heading">Protective measures against the Coronavirus (COVID-19)</h2>
-                  <img src="" alt="">
-                  <p class="tipps_p">You can protect yourself and help prevent spreading the virus to others if you:</p>
-                  <ul class="skills-list" style="padding-left: 0px;">
-                      <li><i class="fas fa-check"> </i><span> </span> Wash your hands regularly for 20 seconds, with soap and water or alcohol-based hand rub</li>
-                      <li><i class="fas fa-check"> </i><span> </span>Cover your nose and mouth with a disposable tissue or flexed elbow when you cough or sneeze</li>
-                      <li><i class="fas fa-check"> </i><span> </span>Avoid close contact (1 meter or 3 feet) with people who are unwell</li>
-                      <li><i class="fas fa-check"> </i><span> </span>Stay home and self-isolate from others in the household if you feel unwell</li>
-                  </ul>
-                </div>
-              </div>
+    <section class="few_tips">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="tipps">
+              <h2 class="tipps_heading">Symptoms of the Coronavirus (COVID-19)</h2>
+              <img src="" alt="">
+              <p class="tipps_p">People may be sick with the virus for 1 to 14 days before developing symptoms. The most
+                common symptoms of coronavirus disease (COVID-19) are fever, tiredness, and dry cough. Most people
+                (about 80%) recover from the disease without needing special treatment.
+                More rarely, the disease can be serious and even fatal. Older people, and people with other medical
+                conditions (such as asthma, diabetes, or heart disease), may be more vulnerable to becoming severely
+                ill.</p>
+              <p class="tipps_p">People may experience:</p>
+              <ul class="skills-list" style="padding-left: 0px;">
+                <li><i class="fas fa-location-arrow"> </i> <span> </span>Cough</li>
+                <li><i class="fas fa-location-arrow"> </i><span> </span>Fever</li>
+                <li><i class="fas fa-location-arrow"> </i><span> </span>Tiredness</li>
+                <li><i class="fas fa-location-arrow"> </i><span> </span>Difficulty breathing (severe cases)</li>
+              </ul>
             </div>
-        </div>
-
-      </section>
-
-      <section class="few_tips">
-        <div class="container">
-            <div class="row">
-              <div class="col">
-                <div class="tipps">
-                  <h2 class="tipps_heading">Symptoms of the Coronavirus (COVID-19)</h2>
-                  <img src="" alt="">
-                  <p class="tipps_p">People may be sick with the virus for 1 to 14 days before developing symptoms. The most common symptoms of coronavirus disease (COVID-19) are fever, tiredness, and dry cough. Most people (about 80%) recover from the disease without needing special treatment.
-More rarely, the disease can be serious and even fatal. Older people, and people with other medical conditions (such as asthma, diabetes, or heart disease), may be more vulnerable to becoming severely ill.</p>
-                  <p class="tipps_p">People may experience:</p>
-                  <ul class="skills-list" style="padding-left: 0px;">
-                      <li><i class="fas fa-location-arrow"> </i> <span> </span>Cough</li>
-                      <li><i class="fas fa-location-arrow"> </i><span> </span>Fever</li>
-                      <li><i class="fas fa-location-arrow"> </i><span> </span>Tiredness</li>
-                      <li><i class="fas fa-location-arrow"> </i><span> </span>Difficulty breathing (severe cases)</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-        </div>
-
-      </section>
-
-      <div class="news_card">
-              <h2 class="text-center">Global Headlines on COVID-19 (Coronavirus)</2>
-                <div class="news_container"  style="margin-top:2rem;" id="news">
-                </div>
           </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="news_card">
+      <h2 class="text-center">Global Headlines on COVID-19 (Coronavirus)</2>
+        <div class="news_container" style="margin-top:2rem;" id="news">
+        </div>
+    </div>
     <div class="container my-5" style="margin-bottom:3rem;"></div>
 
     <div class="footer" style="padding-bottom:1.5rem;">
 
-           <div class="row icon-row">
-               <a href="https://instagram.com/roshan.py" class="btn-icon" target="_blank"> <i class="fab fa-instagram"></i> </a>
-               <a href="https://www.github.com/chokshiroshan/" class="btn-icon" target="_blank"> <i class="fab fa-github"></i> </a>
-               <a href="https://dribbble.com/electronlabs/" class="btn-icon" target="_blank"> <i class="fab fa-dribbble"></i> </a>
-               <a href="https://instagram.com/iamharsh.dev" class="btn-icon" target="_blank"> <i class="fab fa-instagram"></i> </a>
-               <a href="https://www.github.com/theuitown/" class="btn-icon" target="_blank"> <i class="fab fa-github"></i> </a>
-           </div>
-           <div class="credits">
-               <span>Made with ❤️ </span>
-              <span> by <a href="https://iamharsh.design/" target="_blank">iamharsh.dev </a>  & <a href="https://instagram.com/roshan.py" target="_blank"> Rosh</a></span>
-           </br>
-              <span>API Credits:<a href="https://github.com/chokshiroshan/coronavirus-worlddata-api" target="_blank" >Rosh </a> &
-              <a href="https://github.com/amodm/api-covid19-in" target="_blank" >Amod Malviya</a></span>
-           </div>
+      <div class="row icon-row">
+        <a href="https://instagram.com/roshan.py" class="btn-icon" target="_blank"> <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.github.com/chokshiroshan/" class="btn-icon" target="_blank"> <i class="fab fa-github"></i>
+        </a>
+        <a href="https://dribbble.com/electronlabs/" class="btn-icon" target="_blank"> <i class="fab fa-dribbble"></i>
+        </a>
+        <a href="https://instagram.com/iamharsh.dev" class="btn-icon" target="_blank"> <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.github.com/theuitown/" class="btn-icon" target="_blank"> <i class="fab fa-github"></i> </a>
+      </div>
+      <div class="credits">
+        <span>Made with ❤️ </span>
+        <span> by <a href="https://iamharsh.design/" target="_blank">iamharsh.dev </a> , <a
+            href="https://instagram.com/roshan.py" target="_blank"> Rosh</a></span> & <a
+            href="https://linkedin.com/in/rahul-bera-" target="_blank"> Rahul </a></span>
+        </br>
+        <span>API Credits:<a href="https://github.com/chokshiroshan/coronavirus-worlddata-api" target="_blank">Rosh </a>
+          &
+          <a href="https://github.com/amodm/api-covid19-in" target="_blank">Amod Malviya</a></span>
+      </div>
 
-        <span><a href="https://github.com/roshanchokshi/roshanchokshi.github.io" target="_blank"> GoCorona</a> is an opensource project you can also make changes and create a pull request.  </span>
-       </div>
-       <!-- add this at the end of body -->
-<div class="cursor-dot-outline"></div> <div class="cursor-dot"></div>
+      <span><a href="https://github.com/roshanchokshi/roshanchokshi.github.io" target="_blank"> GoCorona</a> is an
+        opensource project you can also make changes and create a pull request. </span>
+    </div>
+    <!-- add this at the end of body -->
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
 
-<script src="https://codepen.io/harsh-vardhan/pen/yWzQBq.js"></script>
+    <script src="https://codepen.io/harsh-vardhan/pen/yWzQBq.js"></script>
 
-<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-       <script src="https://d3js.org/d3.v4.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/1.6.20/topojson.min.js"></script>
     <script type="text/javascript" src="js/map.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
 
-<script type="text/javascript" src="js/database.js"></script>
+    <script type="text/javascript" src="js/database.js"></script>
     <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
@@ -210,6 +235,29 @@ More rarely, the disease can be serious and even fatal. Older people, and people
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Your custom scripts (optional) -->
-    <script type="text/javascript"></script>
-  </body>
+    <script type="text/javascript">
+
+      const shareBtn = document.getElementById("shareBtn")
+
+      // check if web share API available if not display:none the share btn
+      if (!navigator.share) {
+        shareBtn.classList.add('invisible')
+
+      } else {
+        shareBtn.addEventListener('click', () => {
+          navigator.share({
+            title: 'COVID-19 Live Updates',
+            text: 'Get COVID-19 live updates of Indian states ',
+            url: 'https://gocorona.wtf'
+          }).then(() => {
+
+          }).catch(() => {
+
+          })
+        })
+      }
+
+    </script>
+</body>
+
 </html>
