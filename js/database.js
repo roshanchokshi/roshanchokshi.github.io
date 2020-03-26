@@ -184,8 +184,8 @@ let resp2 = null;
 // $.get("https://coronavirus-worlddata.herokuapp.com/", function(d) {
 //   resp = d;
 // });
-$.getJSON("https://coronavirus-worlddata.herokuapp.com/", null, function(data) {
-  resp = data.India;
+$.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function(data) {
+  resp = data;
   // resp2 = data.USA;
   var j = "<tbody>";
   j += "<tr>";
