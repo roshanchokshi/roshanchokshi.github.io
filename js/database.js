@@ -164,7 +164,7 @@ $(document).ready(function() {
         card_desc.setAttribute("class", "card-text");
         var news_img = document.createElement("img");
         news_img.setAttribute("src", data.articles[i].urlToImage);
-        news_img.setAttribute("class", "card-img-top");
+        news_img.setAttribute("class", "card-img-top lazyload"); // added lazyload classs 
         var btntoart = document.createElement("a");
         btntoart.setAttribute("class", "btn btn-main");
         btntoart.style.color = "#fff";
