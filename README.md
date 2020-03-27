@@ -9,15 +9,9 @@
 Now you can track Coronavirus (COVID-19) cases from india via <a>https://gocorona.wtf/</a> .
 Be safe guys and stay home.</h4>
 
-
-___
-
-
 <p><h6>Stay tuned for the latest updates:</h6>
 <a href="https://github.com/roshanchokshi/roshanchokshi.github.io" >
 <img src="https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/heart1.png" height="40"></a></p>
-
-</br>
 
 ## 📱Screenshots
 <p align="left">
