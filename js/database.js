@@ -144,7 +144,7 @@ $(document).ready(function() {
     var newcol = document.createElement("ul");
     newcol.setAttribute("class", "list-inline");
     news.appendChild(newcol);
-    for (var i = 0; i < 12; i++) {
+    for (var i = 0; i < 8; i++) {
       var li = document.createElement("li");
       li.setAttribute("class", "list-inline-item");
       var card = document.createElement("div");
