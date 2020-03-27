@@ -21,6 +21,11 @@ Be safe guys and stay home.</h4>
 <img src="https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/Screenshot_20200327_172345.png" width="100%"/>
 </p>
 <br>
+## ⚙️ API'S USED
+
+## [CORONEWS-19 API](https://coronews.iamharsh.design/)
+### [World Data API](https://github.com/chokshiroshan/coronavirus-worlddata-api)
+#### [Official Data COVID-19 API](https://github.com/amodm/api-covid19-in)
 
 ## ⚙️ Contribution
 
