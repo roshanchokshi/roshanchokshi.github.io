@@ -1,7 +1,7 @@
 # roshanchokshi.github.io
 
 <a href="https://github.com/roshanchokshi/roshanchokshi.github.io">
-<img align="left" src="https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/heart1.png" width="400" height="230" /></a>
+<img align="left" src="https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/heart1.png" height="100" /></a>
 
 <p><h2 align="left">GOCORONA.WTF</h2></p>
 
@@ -15,16 +15,16 @@ ___
 
 <p><h6>Stay tuned for the latest updates:</h6>
 <a href="https://github.com/roshanchokshi/roshanchokshi.github.io" >
-<img src="https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/heart1.png" width="220" height="40"></a></p>
+<img src="https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/heart1.png" height="40"></a></p>
 
 </br>
 
 ## 📱Screenshots
 <p align="left">
-<img src="https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/Screenshot_20200327_164034.png" width="300"/>
+<img src="https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/Screenshot_20200327_164034.png" width="100%"/>
 </p>
 <p align="right">
-<img src="https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/Screenshot_20200327_172345.png" width="300"/>
+<img src="https://raw.githubusercontent.com/roshanchokshi/roshanchokshi.github.io/master/Screenshot_20200327_172345.png" width="100%"/>
 </p>
 <br>
 
