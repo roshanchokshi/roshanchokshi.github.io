@@ -23,9 +23,9 @@ Be safe guys and stay home.</h4>
 <br>
 ## ⚙️ API'S USED
 
-## [CORONEWS-19 API](https://coronews.iamharsh.design/)
-### [World Data API](https://github.com/chokshiroshan/coronavirus-worlddata-api)
-#### [Official Data COVID-19 API](https://github.com/amodm/api-covid19-in)
+### :fire: [CORONEWS-19 API](https://coronews.iamharsh.design/)
+### :heart: [World Data API](https://github.com/chokshiroshan/coronavirus-worlddata-api)
+#### :smile: [Official Data COVID-19 API](https://github.com/amodm/api-covid19-in)
 
 ## ⚙️ Contribution
 
