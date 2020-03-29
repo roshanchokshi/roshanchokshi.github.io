@@ -1,139 +1,123 @@
 $(document).ready(function() {
-  $.getJSON("https://api.rootnet.in/covid19-in/stats/latest", null, function(
-    data
-  ) {
-    Obj = data.data.summary;
-    mainObj = data.data.regional.sort(function(a, b) {
-      return (
-        b.confirmedCasesIndian +
-        b.confirmedCasesForeign -
-        (a.confirmedCasesIndian + a.confirmedCasesForeign)
-      );
-    });
-    var k = "<tbody>";
-    for (i = 0; i < mainObj.length; i++) {
-      k += "<tr>";
-      k += "<td>" + mainObj[i].loc + "</td>";
-      k +=
-        "<td>" +
-        (mainObj[i].confirmedCasesIndian + mainObj[i].confirmedCasesForeign) +
-        "</td>";
-      k +=
-        "<td>" +
-        (mainObj[i].confirmedCasesIndian +
-          mainObj[i].confirmedCasesForeign -
-          mainObj[i].deaths -
-          mainObj[i].discharged) +
-        "</td>";
-      k += "<td>" + mainObj[i].deaths + "</td>";
-      k += "<td>" + mainObj[i].discharged + "</td>";
-      k += "</tr>";
+  $.getJSON(
+    "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
+    null,
+    function(data) {
+      mainObj = data.data.statewise;
+      var k = "<tbody>";
+      for (i = 0; i < mainObj.length; i++) {
+        k += "<tr>";
+        k += "<td>" + mainObj[i].state + "</td>";
+        k += "<td>" + mainObj[i].confirmed + "</td>";
+        k += "<td>" + mainObj[i].recovered + "</td>";
+        k += "<td>" + mainObj[i].deaths + "</td>";
+        k += "<td>" + mainObj[i].recovered + "</td>";
+        k += "</tr>";
+      }
+      k += "</tbody> ";
+      document.getElementById("tableData").innerHTML = k;
     }
-    k += "</tbody> ";
-    document.getElementById("tableData").innerHTML = k;
-    var j = "<tbody>";
-    j += "<tr>";
-    j += "<td>" + Obj.total + "</td>";
-    j += "<td>" + (Obj.total - Obj.deaths - Obj.discharged) + "</td>";
-    j += "<td>" + Obj.confirmedCasesIndian + "</td>";
-    j += "</tr>";
-    j += "</tbody>";
-    document.getElementById("india-data1").innerHTML = j;
-    var j = "<tbody>";
-    j += "<tr>";
-    j += "<td>" + Obj.confirmedCasesForeign + "</td>";
-    j += "<td>" + Obj.deaths + "</td>";
-    j += "<td>" + Obj.discharged + "</td>";
-    j += "</tr>";
-    j += "</tbody>";
-    document.getElementById("india-data2").innerHTML = j;
-  });
+  );
 });
 
-$(document).ready(function() {
-  $.getJSON("https://api.rootnet.in/covid19-in/stats/latest", null, function(
-    data
-  ) {
-    Obj = data.data.summary;
-    mainObj = data.data.regional.sort(function(a, b) {
-      return (
-        b.confirmedCasesIndian +
-        b.confirmedCasesForeign -
-        (a.confirmedCasesIndian + a.confirmedCasesForeign)
-      );
-    });
-    var loca = [];
-    var cases = [];
-    var curedcases = [];
-    for (var i = 0; i < mainObj.length - 9; i++) {
-      loca.push(mainObj[i].loc);
-      cases.push(
-        mainObj[i].confirmedCasesIndian + mainObj[i].confirmedCasesForeign
-      );
-      curedcases.push(mainObj[i].discharged);
-    }
+$.getJSON(
+  "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
+  null,
+  function(data) {
+    resp = data.data.total;
+    var j = "<tbody>";
+    j += "<tr>";
+    j += "<td>" + resp.confirmed + "</td>";
+    j += "<td>" + resp.active + "</td>";
+    j += "<td>" + resp.deaths + "</td>";
+    j += "<td>" + resp.recovered + "</td>";
+    j += "</tr>";
+    j += "</tbody>";
+    // j += "<p>" + resp2.total + "</p>";
+    document.getElementById("india-data").innerHTML = j;
+  }
+);
 
-    var ctx = document.getElementById("canvas").getContext("2d");
-    var myChart = new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: loca,
-        datasets: [
-          {
-            label: "Infected",
-            data: cases,
-            backgroundColor: "white",
-            borderColor: "blue",
-            fill: false
-          },
-          {
-            label: "Cured",
-            fill: false,
-            backgroundColor: "#fff",
-            borderColor: "red",
-            data: curedcases
-          }
-        ]
-      },
-      options: {
-        legend: {
-          display: true
-        },
-        responsive: true,
-        tooltips: {
-          mode: "index",
-          intersect: false
-        },
-        hover: {
-          mode: "nearest",
-          intersect: true
-        },
-        scales: {
-          xAxes: [
+$(document).ready(function() {
+  $.getJSON(
+    "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
+    null,
+    function(data) {
+      Obj = data.data.statewise;
+      mainObj = data.data.statewise.sort(function(a, b) {
+        return b.confirmed - a.confirmed;
+      });
+      var loca = [];
+      var cases = [];
+      var curedcases = [];
+      for (var i = 0; i < mainObj.length - 9; i++) {
+        loca.push(mainObj[i].state);
+        cases.push(mainObj[i].confirmed);
+        curedcases.push(mainObj[i].recovered);
+      }
+
+      var ctx = document.getElementById("canvas").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: loca,
+          datasets: [
             {
-              display: true,
-              ticks: {
-                display: false
-              },
-              scaleLabel: {
-                display: true,
-                labelString: "States"
-              }
-            }
-          ],
-          yAxes: [
+              label: "Infected",
+              data: cases,
+              backgroundColor: "white",
+              borderColor: "blue",
+              fill: false
+            },
             {
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: "No. of people"
-              }
+              label: "Cured",
+              fill: false,
+              backgroundColor: "#fff",
+              borderColor: "red",
+              data: curedcases
             }
           ]
+        },
+        options: {
+          legend: {
+            display: true
+          },
+          responsive: true,
+          tooltips: {
+            mode: "index",
+            intersect: false
+          },
+          hover: {
+            mode: "nearest",
+            intersect: true
+          },
+          scales: {
+            xAxes: [
+              {
+                display: true,
+                ticks: {
+                  display: false
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: "States"
+                }
+              }
+            ],
+            yAxes: [
+              {
+                display: true,
+                scaleLabel: {
+                  display: true,
+                  labelString: "No. of people"
+                }
+              }
+            ]
+          }
         }
-      }
-    });
-  });
+      });
+    }
+  );
 });
 
 $(document).ready(function() {
@@ -184,7 +168,9 @@ let resp2 = null;
 // $.get("https://coronavirus-worlddata.herokuapp.com/", function(d) {
 //   resp = d;
 // });
-$.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function(data) {
+$.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function(
+  data
+) {
   resp = data;
   // resp2 = data.USA;
   var j = "<tbody>";
