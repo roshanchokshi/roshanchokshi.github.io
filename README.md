@@ -38,8 +38,8 @@ cd roshanchokshi.github.io
 
 ## 🙍🏻‍♂️ Authors
 
-* [Harsh Vardhan Goswami](http://github.com/theuitown/)
 * [Roshan Chokshi](https://github.com/chokshiroshan/)
+* [Harsh Vardhan Goswami](http://github.com/theuitown/)
 
 ## 📄 License
 
