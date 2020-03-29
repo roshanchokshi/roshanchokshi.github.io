@@ -9,7 +9,7 @@ $(document).ready(function() {
         k += "<tr>";
         k += "<td>" + mainObj[i].state + "</td>";
         k += "<td>" + mainObj[i].confirmed + "</td>";
-        k += "<td>" + mainObj[i].recovered + "</td>";
+        k += "<td>" + mainObj[i].active + "</td>";
         k += "<td>" + mainObj[i].deaths + "</td>";
         k += "<td>" + mainObj[i].recovered + "</td>";
         k += "</tr>";
