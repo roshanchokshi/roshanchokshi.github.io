@@ -158,6 +158,8 @@ function drawSubUnits(t) {
         )
         .style("left", d3.event.pageX + 20 + "px")
         .style("top", d3.event.pageY - 48 + "px");
+
+console.log(d3.event.pageY);
     })
     .on("mouseout", function(t) {
       tooltip
