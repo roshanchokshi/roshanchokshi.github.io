@@ -143,7 +143,8 @@ $(document).ready(function() {
       card_title.setAttribute("classs", "card-title");
       var news_img = document.createElement("img");
       news_img.setAttribute("src", data.news[i].img);
-      news_img.setAttribute("class", "card-img-top");
+      news_img.setAttribute("class", "card-img-top lazyload");
+      news_img.setAttribute("loading", "lazy");
       var btntoart = document.createElement("a");
       btntoart.setAttribute("class", "btn btn-main");
       btntoart.style.color = "#fff";
