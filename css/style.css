@@ -298,7 +298,7 @@ a:focus {
   align-items: center;
   border-radius: 50px;
   background: #262529;
-  box-shadow: 8px 8px 16px #c8d1d4, -8px -8px 16px #feffff;
+  box-shadow: 8px 8px 16px #aaa, -8px -8px 16px #aaa;
   position: fixed;
   right: 20px;
   bottom: 20px;
