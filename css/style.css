@@ -268,6 +268,11 @@ a:focus {
 
 #graph-data {
   display: none;
+  background: #262529;
+}
+
+#map-data{
+  background: #262529;
 }
 
 #fast-data {
