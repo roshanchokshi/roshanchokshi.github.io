@@ -1,3 +1,4 @@
+
 $(document).ready(function() {
   $.getJSON(
     "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
@@ -168,22 +169,22 @@ let resp2 = null;
 // $.get("https://coronavirus-worlddata.herokuapp.com/", function(d) {
 //   resp = d;
 // });
-$.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function(
-  data
-) {
-  resp = data;
-  // resp2 = data.USA;
-  var j = "<tbody>";
-  j += "<tr>";
-  j += "<td>" + resp.total + "</td>";
-  j += "<td>" + resp.active + "</td>";
-  j += "<td>" + resp.deaths + "</td>";
-  j += "<td>" + resp.cured + "</td>";
-  j += "</tr>";
-  j += "</tbody>";
-  // j += "<p>" + resp2.total + "</p>";
-  document.getElementById("faster-data").innerHTML = j;
-});
+// $.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function(
+//   data
+// ) {
+//   resp = data;
+//   // resp2 = data.USA;
+//   var j = "<tbody>";
+//   j += "<tr>";
+//   j += "<td>" + resp.total + "</td>";
+//   j += "<td>" + resp.active + "</td>";
+//   j += "<td>" + resp.deaths + "</td>";
+//   j += "<td>" + resp.cured + "</td>";
+//   j += "</tr>";
+//   j += "</tbody>";
+//   // j += "<p>" + resp2.total + "</p>";
+//   document.getElementById("faster-data").innerHTML = j;
+// });
 
 $(document).ready(function() {
   $("#btn-graph").on("click", function() {

@@ -1,12 +1,4 @@
-@font-face {
-  font-family: GrotekMed;
-  src: url("../fonts/HKGroteskPro-Medium.woff2") format("opentype");
-}
-
-@font-face {
-  font-family: GrotekBold;
-  src: url("../fonts/Graphik-Bold.woff2") format("opentype");
-}
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600&display=swap');
 
 *,
 *:before,
@@ -34,31 +26,62 @@ body * {
 }
 
 .cursor-dot {
-  width: 8px;
-  height: 8px;
-  background-color: #000;
+  width: 6px;
+  height: 6px;
+  background-color: #fff;
+}
+
+tr{
+  border-bottom: thin solid #2f2e33;
+}
+
+tr:last-child{
+  border-bottom:none;
+}
+
+tr:hover{
+  background: #1E1D21;transition: .4s; margin-left: 1rem;
+}
+
+table.table td {
+   font-family: 'Baloo Thambi 2',cursive;font-weight: 500;
 }
 
 .cursor-dot-outline {
   width: 40px;
   height: 40px;
   background-color: transparent;
-  border: 2px solid #000;
+  border: 2px solid #fff;
 }
 
 body {
-  background-color: #e3eef1;
-  margin-top: 2rem;
-  font-family: GrotekMed;
+  background-color: #1E1D21;
+  margin-top: 2rem;color: #aaa;
+  font-family: 'Baloo Thambi 2',cursive;
 }
 
 #grad {
-  background-color: #e3eef1;
+  background-color: #262529;
   border-radius: 1rem;
   margin-top: 1rem;
-  color: black;
-  font-family: GrotekMed;
+  color: #666;
+  font-family: 'Baloo Thambi 2', cursive;
+  font-weight: 600;
   -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
+}
+
+#grad th{
+  color: #aaa;  font-family: 'Baloo Thambi 2', cursive;
+    font-weight: 600;
+}
+
+.btn-main{
+  background: #262529;
+  color: #aaa;
+}
+
+.btn:hover{
+color: #aaa;
 }
 
 path.subunit:hover {
@@ -68,23 +91,23 @@ path.subunit:hover {
 div.tooltip {
   position: absolute;
   padding: 5px 10px;
-  color: black;
+  color: #fff;
   border-radius: 4px;
   font: 12px sans-serif;
-  background: white;
-  border: 1px solid black;
+  background: #262529;
+  border: 1px solid #fff;
   pointer-events: none;
   min-width: 150px;
 }
 
 .tipps {
-  background-color: #e3eef1;
+  background-color: #262529;
   border-radius: 1rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 2rem;
-  color: black;
-  font-family: GrotekMed;
+  color: #fff;
+  font-family: 'Baloo Thambi 2', cursive;font-weight: 500;
   -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -93,25 +116,50 @@ th {
 }
 
 .tipps_heading {
-  font-family: GrotekBold;
+  font-family: 'Baloo Thambi 2', cursive;font-weight: 600;color: #aaa;
 }
 
 .tipps ul li {
-  list-style-type: none;
+  list-style-type: none;font-family: 'Baloo Thambi 2', cursive;font-weight: 400;color: #aaa;
 }
 
 thread {
-  border-radius: 1rem;
+  border-radius: 1rem;color: #aaa;
 }
+
+table.table thead th {
+    color: #aaa;
+}
+
+table.table:first-child td{
+  font-size: 28px;font-family: 'Baloo Thambi 2', cursive;font-weight: 600;
+}
+
+table.table:first-child td:nth-child(1) {
+color: #5851db;
+}
+
+table.table:first-child td:nth-child(4) {
+color: #4ccf76;
+}
+
+table.table:first-child td:nth-child(3){
+  color: #e1306c;
+}
+
+table.table:first-child td:nth-child(2){
+  color: #007bff;
+}
+
 
 .india-data {
   background-image: linear-gradient(to right, #f953c6, #b91d73);
   border-radius: 10px;
 }
+
 #header {
   text-align: center;
-  color: black;
-  font-family: GrotekBold;
+  color: #aaa;font-weight: 600;
   margin-bottom: 2rem;
 }
 
@@ -121,26 +169,45 @@ thread {
 
 .card {
   text-align: initial;
+  color: #aaa;
+  background: #262529;
+}
+
+.card button{
+  color: #666;background: #262529;
 }
 
 .text-center {
   text-align: center;
-  color: black;
+  color: #aaa;
   margin-top: 3rem;
-  font-family: GrotekBold;
+  font-family: 'Baloo Thambi 2',cursive;
+  font-weight: 600;
   margin-bottom: 2rem;
 }
+
+.tipps_p{
+    color: #aaa;
+}
+
 
 .text-p {
   text-align: center;
-  color: black;
+color: #aaa;
   margin-top: 1rem;
-  font-family: GrotekBold;
+  font-family: 'Baloo Thambi 2',cursive;
+  font-weight: 600;
   margin-bottom: 2rem;
 }
 
+h2{
+  font-family: 'Baloo Thambi 2',cursive;
+  font-weight: 600;
+}
+
+
 .footer {
-  background: #e3eef1;
+  background: #1E1D21;
   padding-top: 1rem;
 }
 
@@ -148,7 +215,7 @@ thread {
   text-align: center;
   font-size: 22px;
   width: 26px;
-  color: #000;
+  color: #aaa;
   line-height: 24px;
   padding-top: 1px;
 }
@@ -188,7 +255,7 @@ thread {
 
 .credits span {
   font-family: GrotekMed;
-  color: black;
+  color: #aaa;
 }
 
 a:hover {
@@ -225,7 +292,7 @@ a:focus {
   justify-content: center;
   align-items: center;
   border-radius: 50px;
-  background: #e3eef1;
+  background: #262529;
   box-shadow: 8px 8px 16px #c8d1d4, -8px -8px 16px #feffff;
   position: fixed;
   right: 20px;
