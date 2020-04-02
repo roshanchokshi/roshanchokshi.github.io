@@ -1,10 +1,11 @@
-
 $(document).ready(function() {
   $.getJSON(
     "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
     null,
     function(data) {
-      mainObj = data.data.statewise;
+      mainObj = data.data.statewise.sort(function(a, b) {
+        return b.confirmed - a.confirmed;
+      });
       var k = "<tbody>";
       for (i = 0; i < mainObj.length; i++) {
         k += "<tr>";
