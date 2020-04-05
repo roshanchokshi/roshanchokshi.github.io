@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500;600&display=swap");
 
 *,
 *:before,
@@ -31,20 +31,23 @@ body * {
   background-color: #fff;
 }
 
-tr{
+tr {
   border-bottom: thin solid #2f2e33;
 }
 
-tr:last-child{
-  border-bottom:none;
+tr:last-child {
+  border-bottom: none;
 }
 
-tr:hover{
-  background: #1E1D21;transition: .4s; margin-left: 1rem;
+tr:hover {
+  background: #1e1d21;
+  transition: 0.4s;
+  margin-left: 1rem;
 }
 
 table.table td {
-   font-family: 'Baloo Thambi 2',cursive;font-weight: 500;
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: 500;
 }
 
 .cursor-dot-outline {
@@ -55,9 +58,10 @@ table.table td {
 }
 
 body {
-  background-color: #1E1D21;
-  margin-top: 2rem;color: #aaa;
-  font-family: 'Baloo Thambi 2',cursive;
+  background-color: #1e1d21;
+  margin-top: 2rem;
+  color: #aaa;
+  font-family: "Baloo Thambi 2", cursive;
 }
 
 #grad {
@@ -65,23 +69,24 @@ body {
   border-radius: 1rem;
   margin-top: 1rem;
   color: #666;
-  font-family: 'Baloo Thambi 2', cursive;
+  font-family: "Baloo Thambi 2", cursive;
   font-weight: 600;
   -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
 }
 
-#grad th{
-  color: #aaa;  font-family: 'Baloo Thambi 2', cursive;
-    font-weight: 600;
+#grad th {
+  color: #aaa;
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: 600;
 }
 
-.btn-main{
+.btn-main {
   background: #262529;
   color: #aaa;
 }
 
-.btn:hover{
-color: #aaa;
+.btn:hover {
+  color: #aaa;
 }
 
 path.subunit:hover {
@@ -107,7 +112,8 @@ div.tooltip {
   margin-bottom: 2rem;
   padding: 2rem;
   color: #fff;
-  font-family: 'Baloo Thambi 2', cursive;font-weight: 500;
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: 500;
   -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.15);
 }
 
@@ -116,41 +122,48 @@ th {
 }
 
 .tipps_heading {
-  font-family: 'Baloo Thambi 2', cursive;font-weight: 600;color: #aaa;
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: 600;
+  color: #aaa;
 }
 
 .tipps ul li {
-  list-style-type: none;font-family: 'Baloo Thambi 2', cursive;font-weight: 400;color: #aaa;
+  list-style-type: none;
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: 400;
+  color: #aaa;
 }
 
 thread {
-  border-radius: 1rem;color: #aaa;
+  border-radius: 1rem;
+  color: #aaa;
 }
 
 table.table thead th {
-    color: #aaa;
+  color: #aaa;
 }
 
-table.table:first-child td{
-  font-size: 28px;font-family: 'Baloo Thambi 2', cursive;font-weight: 600;
+table.table:first-child td {
+  font-size: 28px;
+  font-family: "Baloo Thambi 2", cursive;
+  font-weight: 600;
 }
 
 table.table:first-child td:nth-child(1) {
-color: #5851db;
+  color: #5851db;
 }
 
 table.table:first-child td:nth-child(4) {
-color: #4ccf76;
+  color: #4ccf76;
 }
 
-table.table:first-child td:nth-child(3){
+table.table:first-child td:nth-child(3) {
   color: #e1306c;
 }
 
-table.table:first-child td:nth-child(2){
+table.table:first-child td:nth-child(2) {
   color: #007bff;
 }
-
 
 .india-data {
   background-image: linear-gradient(to right, #f953c6, #b91d73);
@@ -159,7 +172,8 @@ table.table:first-child td:nth-child(2){
 
 #header {
   text-align: center;
-  color: #aaa;font-weight: 600;
+  color: #aaa;
+  font-weight: 600;
   margin-bottom: 2rem;
 }
 
@@ -173,41 +187,40 @@ table.table:first-child td:nth-child(2){
   background: #262529;
 }
 
-.card button{
-  color: #666;background: #262529;
+.card button {
+  color: #666;
+  background: #262529;
 }
 
 .text-center {
   text-align: center;
   color: #aaa;
   margin-top: 3rem;
-  font-family: 'Baloo Thambi 2',cursive;
+  font-family: "Baloo Thambi 2", cursive;
   font-weight: 600;
   margin-bottom: 2rem;
 }
 
-.tipps_p{
-    color: #aaa;
+.tipps_p {
+  color: #aaa;
 }
-
 
 .text-p {
   text-align: center;
-color: #aaa;
+  color: #aaa;
   margin-top: 1rem;
-  font-family: 'Baloo Thambi 2',cursive;
+  font-family: "Baloo Thambi 2", cursive;
   font-weight: 600;
   margin-bottom: 2rem;
 }
 
-h2{
-  font-family: 'Baloo Thambi 2',cursive;
+h2 {
+  font-family: "Baloo Thambi 2", cursive;
   font-weight: 600;
 }
 
-
 .footer {
-  background: #1E1D21;
+  background: #1e1d21;
   padding-top: 1rem;
 }
 
@@ -271,7 +284,7 @@ a:focus {
   background: #262529;
 }
 
-#map-data{
+#map-data {
   background: #262529;
 }
 
@@ -314,4 +327,9 @@ a:focus {
 
 .invisible {
   display: none;
+}
+
+.datarow {
+  display: none;
+  background-color: #262529;
 }

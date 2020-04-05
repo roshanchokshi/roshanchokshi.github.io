@@ -1,5 +1,12 @@
 $(document).ready(function() {
   $.getJSON(
+    "https://api.covid19india.org/state_district_wise.json",
+    null,
+    function(data2) {
+      mainObj2 = data2;
+    }
+  );
+  $.getJSON(
     "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
     null,
     function(data) {
@@ -8,19 +15,58 @@ $(document).ready(function() {
       });
       var k = "<tbody>";
       for (i = 0; i < mainObj.length; i++) {
-        k += "<tr>";
-        k += "<td>" + mainObj[i].state + "</td>";
+        state = mainObj[i].state;
+
+        k += "<tr class='breakrow'>";
+        k += "<td>" + state + "</td>";
         k += "<td>" + mainObj[i].confirmed + "</td>";
         k += "<td>" + mainObj[i].active + "</td>";
         k += "<td>" + mainObj[i].deaths + "</td>";
         k += "<td>" + mainObj[i].recovered + "</td>";
         k += "</tr>";
+        k += "<tr class='datarow'>";
+        k += "<th style='padding:0px 0px 0px 5px; margin:0px;'>District</th>";
+        k += "<th style='padding:0px; margin:0px;'>Cases</th>";
+        k += "</tr>";
+
+        try {
+          distdata = mainObj2[state]["districtData"];
+
+          var dict = []; // create an empty array
+          jQuery.each(distdata, function(i, val) {
+            dict.push({
+              key: i,
+              value: val.confirmed
+            });
+          });
+
+          dict.sort(function(a, b) {
+            return b.value - a.value;
+          });
+
+          jQuery.each(dict, function(i, val) {
+            k += "<tr class='datarow'>";
+            k +=
+              "<td style='padding:0px 0px 0px 5px; margin:0px;'>" +
+              val.key +
+              "</td>";
+            k += "<td style='padding:0px; margin:0px;'>" + val.value + "</td>";
+            k += "</tr>";
+          });
+        } catch {
+          break;
+        }
       }
       k += "</tbody> ";
+
       document.getElementById("tableData").innerHTML = k;
     }
   );
 });
+
+function getByIndex(obj, index) {
+  return obj[Object.keys(obj)[index]];
+}
 
 $.getJSON(
   "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",

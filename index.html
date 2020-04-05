@@ -255,6 +255,14 @@
       }
 
     </script>
+    <script>
+      $(document).ready(function() {
+        $(document).on("click", ".breakrow", function() {  
+        $(this).nextUntil('tr.breakrow').slideToggle(200);
+    });
+  
+});
+    </script>
 </body>
 
 </html>
