@@ -26,9 +26,8 @@ $(document).ready(function() {
               delta: val.delta.confirmed
             });
           });
-
           dict.sort(function(a, b) {
-            return b.value - a.value;
+            return b.confirmed - a.confirmed;
           });
           sdelta = 0;
           jQuery.each(dict, function(i, val) {
