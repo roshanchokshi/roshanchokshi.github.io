@@ -333,3 +333,14 @@ a:focus {
   display: none;
   background-color: #262529;
 }
+
+.delta {
+  color: red;
+  display: inline;
+  font-size: smaller;
+}
+
+.dark-mode {
+  background-color: #e3eef1;
+  background: #e3eef1;
+}

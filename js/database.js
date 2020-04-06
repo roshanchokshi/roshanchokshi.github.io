@@ -15,42 +15,65 @@ $(document).ready(function() {
       });
       var k = "<tbody>";
       for (i = 0; i < mainObj.length; i++) {
-        state = mainObj[i].state;
-
-        k += "<tr class='breakrow'>";
-        k += "<td>" + state + "</td>";
-        k += "<td>" + mainObj[i].confirmed + "</td>";
-        k += "<td>" + mainObj[i].active + "</td>";
-        k += "<td>" + mainObj[i].deaths + "</td>";
-        k += "<td>" + mainObj[i].recovered + "</td>";
-        k += "</tr>";
-        k += "<tr class='datarow'>";
-        k += "<th style='padding:0px 0px 0px 5px; margin:0px;'>District</th>";
-        k += "<th style='padding:0px; margin:0px;'>Cases</th>";
-        k += "</tr>";
-
         try {
+          state = mainObj[i].state;
           distdata = mainObj2[state]["districtData"];
-
           var dict = []; // create an empty array
           jQuery.each(distdata, function(i, val) {
             dict.push({
-              key: i,
-              value: val.confirmed
+              district: i,
+              confirmed: val.confirmed,
+              delta: val.delta.confirmed
             });
           });
 
           dict.sort(function(a, b) {
             return b.value - a.value;
           });
+          sdelta = 0;
+          jQuery.each(dict, function(i, val) {
+            sdelta += val.delta;
+          });
+          if (sdelta == 0) {
+            sdelta = "";
+          } else {
+            sdelta += "↑";
+          }
+          k += "<tr class='breakrow'>";
+          k += "<td>" + state + "</td>";
+          k +=
+            "<td>" +
+            mainObj[i].confirmed +
+            "<p class='delta'>&nbsp;&nbsp;" +
+            sdelta +
+            "</p></td>";
+          k += "<td>" + mainObj[i].active + "</td>";
+          k += "<td>" + mainObj[i].deaths + "</td>";
+          k += "<td>" + mainObj[i].recovered + "</td>";
+          k += "</tr>";
+
+          k += "<tr class='datarow'>";
+          k += "<th style='padding:0px 0px 0px 5px; margin:0px;'>District</th>";
+          k += "<th style='padding:0px; margin:0px;'>Cases</th>";
+          k += "</tr>";
 
           jQuery.each(dict, function(i, val) {
+            if (val.delta == 0) {
+              val.delta = "";
+            } else {
+              val.delta += "↑";
+            }
             k += "<tr class='datarow'>";
             k +=
               "<td style='padding:0px 0px 0px 5px; margin:0px;'>" +
-              val.key +
+              val.district +
               "</td>";
-            k += "<td style='padding:0px; margin:0px;'>" + val.value + "</td>";
+            k +=
+              "<td style='padding:0px; margin:0px;'>" +
+              val.confirmed +
+              "<p class='delta'>&nbsp;&nbsp;" +
+              val.delta +
+              "</p></td>";
             k += "</tr>";
           });
         } catch {
@@ -213,26 +236,6 @@ $(document).ready(function() {
 let resp = null;
 let resp2 = null;
 
-// $.get("https://coronavirus-worlddata.herokuapp.com/", function(d) {
-//   resp = d;
-// });
-// $.getJSON("https://coronavirus-worlddata.herokuapp.com/india", null, function(
-//   data
-// ) {
-//   resp = data;
-//   // resp2 = data.USA;
-//   var j = "<tbody>";
-//   j += "<tr>";
-//   j += "<td>" + resp.total + "</td>";
-//   j += "<td>" + resp.active + "</td>";
-//   j += "<td>" + resp.deaths + "</td>";
-//   j += "<td>" + resp.cured + "</td>";
-//   j += "</tr>";
-//   j += "</tbody>";
-//   // j += "<p>" + resp2.total + "</p>";
-//   document.getElementById("faster-data").innerHTML = j;
-// });
-
 $(document).ready(function() {
   $("#btn-graph").on("click", function() {
     var graph = document.getElementById("graph-data");
@@ -246,22 +249,6 @@ $(document).ready(function() {
     var map = document.getElementById("map-data");
     graph.style.display = "none";
     map.style.display = "block";
-  });
-});
-
-$(document).ready(function() {
-  $("#btn-offical").on("click", function() {
-    var offical = document.getElementById("offical-data");
-    var fast = document.getElementById("fast-data");
-    offical.style.display = "block";
-    fast.style.display = "none";
-  });
-
-  $("#btn-fast").on("click", function() {
-    var offical = document.getElementById("offical-data");
-    var fast = document.getElementById("fast-data");
-    offical.style.display = "none";
-    fast.style.display = "block";
   });
 });
 
