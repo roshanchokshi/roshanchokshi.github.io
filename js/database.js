@@ -54,7 +54,8 @@ $(document).ready(function () {
           k += "</tr>";
 
           k += "<tr class='datarow'>";
-          k += "<th style='padding:0px 0px 0px 5px; margin:0px;'>District</th>";
+          k +=
+            "<th style='padding:0px 0px 0px 13px; margin:0px;'>District</th>";
           k += "<th style='padding:0px; margin:0px;'>Cases</th>";
           k += "</tr>";
 
@@ -66,7 +67,7 @@ $(document).ready(function () {
             }
             k += "<tr class='datarow'>";
             k +=
-              "<td style='padding:0px 0px 0px 5px; margin:0px;'>" +
+              "<td style='padding:0px 0px 0px 13px; margin:0px;'>" +
               val.district +
               "</td>";
             k +=
