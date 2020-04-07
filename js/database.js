@@ -1,38 +1,40 @@
-$(document).ready(function() {
+$(document).ready(function () {
   $.getJSON(
     "https://api.covid19india.org/state_district_wise.json",
     null,
-    function(data2) {
+    function (data2) {
       mainObj2 = data2;
     }
   );
   $.getJSON(
     "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
     null,
-    function(data) {
-      mainObj = data.data.statewise.sort(function(a, b) {
+    function (data) {
+      mainObj = data.data.statewise.sort(function (a, b) {
         return b.confirmed - a.confirmed;
       });
       var k = "<tbody>";
+      idelta = 0;
       for (i = 0; i < mainObj.length; i++) {
         try {
           state = mainObj[i].state;
           distdata = mainObj2[state]["districtData"];
           var dict = []; // create an empty array
-          jQuery.each(distdata, function(i, val) {
+          jQuery.each(distdata, function (i, val) {
             dict.push({
               district: i,
               confirmed: val.confirmed,
-              delta: val.delta.confirmed
+              delta: val.delta.confirmed,
             });
           });
-          dict.sort(function(a, b) {
+          dict.sort(function (a, b) {
             return b.confirmed - a.confirmed;
           });
           sdelta = 0;
-          jQuery.each(dict, function(i, val) {
+          jQuery.each(dict, function (i, val) {
             sdelta += val.delta;
           });
+          idelta += sdelta;
           if (sdelta == 0) {
             sdelta = "";
           } else {
@@ -56,7 +58,7 @@ $(document).ready(function() {
           k += "<th style='padding:0px; margin:0px;'>Cases</th>";
           k += "</tr>";
 
-          jQuery.each(dict, function(i, val) {
+          jQuery.each(dict, function (i, val) {
             if (val.delta == 0) {
               val.delta = "";
             } else {
@@ -84,37 +86,47 @@ $(document).ready(function() {
       document.getElementById("tableData").innerHTML = k;
     }
   );
-});
 
-function getByIndex(obj, index) {
-  return obj[Object.keys(obj)[index]];
-}
-
-$.getJSON(
-  "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
-  null,
-  function(data) {
-    resp = data.data.total;
-    var j = "<tbody>";
-    j += "<tr>";
-    j += "<td>" + resp.confirmed + "</td>";
-    j += "<td>" + resp.active + "</td>";
-    j += "<td>" + resp.deaths + "</td>";
-    j += "<td>" + resp.recovered + "</td>";
-    j += "</tr>";
-    j += "</tbody>";
-    // j += "<p>" + resp2.total + "</p>";
-    document.getElementById("india-data").innerHTML = j;
+  function getByIndex(obj, index) {
+    return obj[Object.keys(obj)[index]];
   }
-);
 
-$(document).ready(function() {
   $.getJSON(
     "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
     null,
-    function(data) {
+    function (data) {
+      resp = data.data.total;
+      if (idelta == 0) {
+        sdelta = "";
+      } else {
+        idelta += "↑";
+      }
+      var j = "<tbody>";
+      j += "<tr>";
+      j +=
+        "<td>" +
+        resp.confirmed +
+        "<p class='idelta'>&nbsp;&nbsp;" +
+        idelta +
+        "</p></td>";
+      j += "<td>" + resp.active + "</td>";
+      j += "<td>" + resp.deaths + "</td>";
+      j += "<td>" + resp.recovered + "</td>";
+      j += "</tr>";
+      j += "</tbody>";
+      // j += "<p>" + resp2.total + "</p>";
+      document.getElementById("india-data").innerHTML = j;
+      console.log(idelta);
+    }
+  );
+});
+$(document).ready(function () {
+  $.getJSON(
+    "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise",
+    null,
+    function (data) {
       Obj = data.data.statewise;
-      mainObj = data.data.statewise.sort(function(a, b) {
+      mainObj = data.data.statewise.sort(function (a, b) {
         return b.confirmed - a.confirmed;
       });
       var loca = [];
@@ -137,61 +149,61 @@ $(document).ready(function() {
               data: cases,
               backgroundColor: "white",
               borderColor: "blue",
-              fill: false
+              fill: false,
             },
             {
               label: "Cured",
               fill: false,
               backgroundColor: "#fff",
               borderColor: "red",
-              data: curedcases
-            }
-          ]
+              data: curedcases,
+            },
+          ],
         },
         options: {
           legend: {
-            display: true
+            display: true,
           },
           responsive: true,
           tooltips: {
             mode: "index",
-            intersect: false
+            intersect: false,
           },
           hover: {
             mode: "nearest",
-            intersect: true
+            intersect: true,
           },
           scales: {
             xAxes: [
               {
                 display: true,
                 ticks: {
-                  display: false
+                  display: false,
                 },
                 scaleLabel: {
                   display: true,
-                  labelString: "States"
-                }
-              }
+                  labelString: "States",
+                },
+              },
             ],
             yAxes: [
               {
                 display: true,
                 scaleLabel: {
                   display: true,
-                  labelString: "No. of people"
-                }
-              }
-            ]
-          }
-        }
+                  labelString: "No. of people",
+                },
+              },
+            ],
+          },
+        },
       });
     }
   );
 });
 
-$(document).ready(function() {
-  $.getJSON("https://cryptic-ravine-96718.herokuapp.com/", null, function(
+$(document).ready(function () {
+  $.getJSON("https://cryptic-ravine-96718.herokuapp.com/", null, function (
     data
   ) {
     var news = document.getElementById("news");
@@ -235,15 +247,15 @@ $(document).ready(function() {
 let resp = null;
 let resp2 = null;
 
-$(document).ready(function() {
-  $("#btn-graph").on("click", function() {
+$(document).ready(function () {
+  $("#btn-graph").on("click", function () {
     var graph = document.getElementById("graph-data");
     var map = document.getElementById("map-data");
     graph.style.display = "block";
     map.style.display = "none";
   });
 
-  $("#btn-map").on("click", function() {
+  $("#btn-map").on("click", function () {
     var graph = document.getElementById("graph-data");
     var map = document.getElementById("map-data");
     graph.style.display = "none";
@@ -254,6 +266,6 @@ $(document).ready(function() {
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker
     .register("/sw.js")
-    .then(reg => console.log("service worker registered"))
-    .catch(err => console.log("service worker not registered", err));
+    .then((reg) => console.log("service worker registered"))
+    .catch((err) => console.log("service worker not registered", err));
 }

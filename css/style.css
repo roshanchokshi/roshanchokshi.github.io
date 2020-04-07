@@ -340,7 +340,8 @@ a:focus {
   font-size: smaller;
 }
 
-.dark-mode {
-  background-color: #e3eef1;
-  background: #e3eef1;
+.idelta {
+  color: red;
+  display: inline;
+  font-size: small;
 }
