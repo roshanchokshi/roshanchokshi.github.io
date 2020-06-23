@@ -345,3 +345,7 @@ a:focus {
   display: inline;
   font-size: small;
 }
+
+#india-data td{
+font-size: 1.2rem;
+}
